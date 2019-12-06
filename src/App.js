@@ -1,24 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Other from './components/Other'
 import logo from './logo.svg';
 import './App.css';
+import ExampleContext from './components/ExampleContext';
 
 function App() {
+  const [data, setData] = useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>This is a React app</h2>
+      <input onChange={e => setData(e.target.value)}></input>
+      <ExampleContext.Provider value={{data:data, setData:setData}}>
+        <Other/>
+      </ExampleContext.Provider>
     </div>
   );
 }

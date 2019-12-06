@@ -1,5 +1,11 @@
+body {
+  background-color: powderblue;
+}
+
 .App {
+  font-family: Avenir;
   text-align: center;
+  background-color: peachpuff;
 }
 
 .App-logo {
